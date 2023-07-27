@@ -7,20 +7,17 @@
 
 
 /**
- * Returns the result of concatenation of two strings.
- *
- * @param {string} value1
- * @param {string} value2
- * @return {string}
- *
- * @example
+
  *   'aa', 'bb' => 'aabb'
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  let cancat = `${value1}${value2}`;
+  console.log(cancat)
+  return cancat
 }
+console.log(concatenateStrings(value1, value2))
 
 
 /**
@@ -34,9 +31,10 @@ function concatenateStrings(/* value1, value2 */) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  return value.length
 }
+console.log(getStringLength(value))
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
@@ -51,9 +49,11 @@ function getStringLength(/* value */) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`
 }
+console.log(getStringFromTemplate(firstName, lastName))
+
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -65,10 +65,12 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
-}
+let value = `Hello, ${firstName} ${lastName}!`
 
+function extractNameFromTemplate(value) {
+  return value.slice(7, -1);
+}
+console.log(extractNameFromTemplate(value))
 
 /**
  * Returns a first char of the given string.
@@ -80,9 +82,12 @@ function extractNameFromTemplate(/* value */) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+let value = 'John Doe'
+
+function getFirstChar(value) {
+  return value.slice(0, 1)
 }
+console.log(getFirstChar(value))
 
 /**
  * Removes a leading and trailing whitespace characters from string.
@@ -95,9 +100,11 @@ function getFirstChar(/* value */) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trimStart().trimEnd()
 }
+console.log(removeLeadingAndTrailingWhitespaces(value))
+
 
 /**
  * Returns a string that repeated the specified number of times.
@@ -110,9 +117,14 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+
+function repeatString(value, count) {
+  let numbr = Number(count);
+  console.log(typeof numbr)
+  let rep = value.repeat(numbr)
+  return rep
 }
+console.log(repeatString(value, count))
 
 /**
  * Remove the first occurrence of string inside another string
@@ -126,9 +138,14 @@ function repeatString(/* value, count */) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+
+let value = 'cate';
+let str = 'concatenate';
+// connate
+function removeFirstOccurrences(str, value) {
+  return str.replace(value, '')
 }
+console.log(removeFirstOccurrences(str, value))
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -141,10 +158,12 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+let str = '<span>';
+function unbracketTag(str) {
+  let firstDelete = str.slice(1, length - 1);
+  return firstDelete
 }
-
+console.log(unbracketTag(str))
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -156,9 +175,12 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+let str = 'spAn paN Tan';
+function convertToUpperCase(str) {
+  return str.toUpperCase()
 }
+console.log(convertToUpperCase(str))
+
 
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
