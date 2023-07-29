@@ -197,9 +197,11 @@ console.log(convertToUpperCase(str))
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+let str = 'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com';
+function extractEmails(str) {
+  return str.split(';')
 }
+console.log(extractEmails(str))
 
 /**
  * Returns the string representation of rectangle with specified width and height
@@ -224,9 +226,82 @@ function extractEmails(/* str */) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+
+
+let width = 14;
+let height = 21;
+let grafic = ''
+let rep = ''
+function getRectangleString(width, height) {
+  for (let i = 0; i <= height; i++) {
+    if (height == 2) {
+      if (width == 2) {
+        grafic = '┌┐\n'
+        grafic += '└┘\n'
+      }
+      if (width > 2) {
+        let numbr = width - 2;
+        let value = '─';
+        console.log(value)
+        rep = value.repeat(numbr)
+        grafic = '┌'
+        grafic += rep
+        grafic += '┐\n'
+        grafic += '└'
+        grafic += rep
+        grafic += '┘'
+      }
+    }
+    if (height > 2) {
+      if (width == 2) {
+
+        if (i == 0) {
+          grafic = '┌'
+          grafic += '┐\n'
+
+        }
+        if (i == height) {
+          grafic += '└'
+          grafic += '┘\n'
+        } else {
+          let valuecolumn = '│';
+          grafic += valuecolumn
+          grafic += valuecolumn + '\n'
+        }
+
+      }
+      if (width > 2) {
+        if (i == 0) {
+          let numbr = width - 2;
+          let value = '─';
+          rep = value.repeat(numbr)
+          grafic = '┌'
+          grafic += rep
+          grafic += '┐\n'
+
+        }
+        if (i == height) {
+          let numbr = width - 2;
+          let value = '─';
+          rep = value.repeat(numbr)
+          grafic += '└'
+          grafic += rep
+          grafic += '┘\n'
+        } else {
+          let numbr = width - 2;
+          let empty = ' ';
+          repEmpty = empty.repeat(numbr)
+          let valuecolumn = '│';
+          grafic += valuecolumn
+          grafic += repEmpty
+          grafic += valuecolumn + '\n'
+        }
+      }
+    }
+  }
+  return grafic
 }
+console.log(getRectangleString(width, height))
 
 
 /**
